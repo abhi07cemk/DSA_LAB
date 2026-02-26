@@ -1,42 +1,55 @@
 #include<stdio.h>
 
-void insertion(int arr[], int n, int value, int pos)
+int insertion(int arr[], int n, int value, int pos)
 {
-    for(int i = n; i>=pos; i--)
+    if(pos < 0 || pos > n)
     {
-        arr[i+1] = arr[i];
+        printf("Invalid Position!\n");
+        return n;
     }
+
+    for(int i = n - 1; i >= pos; i--)
+    {
+        arr[i + 1] = arr[i];
+    }
+
     arr[pos] = value;
-    n++;
+
+    return n + 1;   
 }
 
 int main()
 {
-    int arr[20],n, pos, value;
+    int arr[20], n, pos, value;
+
     printf("Enter Array Size : ");
     scanf("%d", &n);
-    for(int i = 0; i<n; i++)
+
+    for(int i = 0; i < n; i++)
     {
         printf("Enter Element %d : ", i+1);
-        scanf("%d", &n);
+        scanf("%d", &arr[i]);   
     }
 
     printf("Old Array : ");
-    for(int i = 0; i<n; i++)
+    for(int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
     }
-    printf("Enter Value to Insert : ");
+
+    printf("\nEnter Value to Insert : ");
     scanf("%d", &value);
-    printf("Enter Position : ");
+
+    printf("Enter Position (0 to %d): ", n);
     scanf("%d", &pos);
 
-    insertion(arr,n,value,pos);
+    n = insertion(arr, n, value, pos);   
+
     printf("New Array : ");
-    for(int i = 0; i<n; i++)
+    for(int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
     }
 
-
+    return 0;
 }
