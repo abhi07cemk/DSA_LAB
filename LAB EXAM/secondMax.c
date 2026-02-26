@@ -10,7 +10,6 @@ int secondMax(int a[], int n)
 
     int max1, max2;
 
-    
     if (a[0] > a[1])
     {
         max1 = a[0];
@@ -21,11 +20,6 @@ int secondMax(int a[], int n)
         max1 = a[1];
         max2 = a[0];
     }
-    // else   
-    // {
-    //     max1 = a[0];
-    //     max2 = -1; 
-    // }
 
     for (int i = 2; i < n; i++)
     {
@@ -39,12 +33,6 @@ int secondMax(int a[], int n)
             max2 = a[i];
         }
     }
-
-    // if (max1 == max2 || max2 == -1)
-    // {
-    //     printf("No distinct second maximum element.\n");
-    //     return -1;
-    // }
 
     return max2;
 }
