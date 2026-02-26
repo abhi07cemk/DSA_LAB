@@ -2,10 +2,17 @@
 
 int deletion(int arr[], int pos, int n)
 {
+    if(pos < 0 || pos >= n)
+    {
+        printf("\nInvalid Position!\n");
+        return n;
+    }
+
     for(int i = pos; i < n - 1; i++)
     {
         arr[i] = arr[i + 1];
     }
+
     return n - 1;
 }
 
