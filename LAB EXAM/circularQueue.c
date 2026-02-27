@@ -6,14 +6,12 @@ int front = -1, rear = -1;
 
 void enqueue(int value)
 {
-    // Check Overflow
     if((rear + 1) % size == front)
     {
         printf("Queue OverFlow!!\n");
         return;
     }
 
-    // First element
     if(front == -1)
     {
         front = rear = 0;
